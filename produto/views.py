@@ -1,6 +1,6 @@
-from django.http import HttpResponse
-from django.shortcuts import render # noqa
+from django.http import HttpResponse # noqa
+from django.shortcuts import render
 
 
-def home(requests):
-    return HttpResponse('Olá')
+def home(request):
+    return render(request, 'home.html', {'nome': 'Helton'})
