@@ -45,7 +45,7 @@ def add_carrinho(request):
 
     x = dict(request.POST)
 
-    def removeLixo(adicional):
+    def removeLixo():
         adicionais = x.copy()
         adicionais.pop('id')
         adicionais.pop('csrfmiddlewaretoken')
@@ -55,7 +55,7 @@ def add_carrinho(request):
 
         return adicionais
 
-    adicionais = removeLixo(x)
+    adicionais = removeLixo()
 
     id = int(x['id'][0])
     preco_total = Produto.objects.filter(id=id)[0].preco
@@ -126,3 +126,9 @@ def ver_carrinho(request):
                                              'carrinho': len(request.session['carrinho']),
                                              'categorias': categorias,
                                              })
+
+
+def remover_carrinho(request, id):
+    request.session['carrinho'].pop(id)
+    request.session.save()
+    return redirect('/ver_carrinho')
