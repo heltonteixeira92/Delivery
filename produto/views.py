@@ -71,7 +71,7 @@ def add_carrinho(request):
                 encontrou = True
                 if len(j[1]) < minimo or len(j[1]) > maximo:
                     aprovado = False
-        if minimo > 0 and encontrou == False:
+        if minimo > 0 and encontrou == False: # noqa
             aprovado = False
 
     if not aprovado:
@@ -103,7 +103,7 @@ def add_carrinho(request):
     request.session['carrinho'].append(data)
     request.session.save()
     # return HttpResponse(request.session['carrinho'])
-    return redirect(f'/ver_carrinho')
+    return redirect(f'/ver_carrinho') # noqa
 
 
 def ver_carrinho(request):

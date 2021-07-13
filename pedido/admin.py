@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import ItemPedido, Pedido
-from django.http import HttpResponse
+from django.http import HttpResponse # noqa
 
 
 class itemPedidoInline(admin.TabularInline):
@@ -17,4 +17,6 @@ class PedidoAdmin(admin.ModelAdmin):
     search_fields = ('entregue',)
     readonly_fields = ('usuario', 'total', 'troco', 'pagamento', 'ponto_referencia', 'data', 'cep', 'rua', 'numero', 'bairro', 'telefone')
     list_filter = ('entregue',)
+
+
 admin.site.register(Pedido, PedidoAdmin)
