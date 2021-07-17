@@ -1,10 +1,13 @@
 .corBorda{
-    background-color: #F6DCE1;
+    background-color: #FF0000;
 }
 
+.main-footer{
+    background-color: yellow;
+}
 .observacoes{
 
-    border: 1px solid #E58383;
+    border: 1px solid #800;
     width: 200px;
 
 }
@@ -28,7 +31,7 @@ padding-bottom: 20px;
 
 .botao{
 
-    background-color: #F69E9E;
+    background-color: #6B0504;
     color: white;
     padding: 8px;
     border-radius: 15px;
@@ -41,7 +44,7 @@ body{
 
 .titulo{
 
-    color: #E58383;
+    color: #6B0504;
 
 }
 
